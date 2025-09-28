@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services Techniques Électroniques - Auto-Entrepreneur</title>
+    <title>Bientôt Disponible - Services Techniques en Développement</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Notre nouveau site de services techniques est en cours de développement. Restez connectés pour découvrir nos solutions en électronique industrielle.">
+    <meta name="keywords" content="services techniques, développement, maintenance, électronique industrielle, Algérie">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMGQ0ZmYiLz4KPHN2ZyB4PSI4IiB5PSI4IiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPgo8cGF0aCBkPSJNMTMgM0M4IDE2IDYgMTYgNiAyMUg5QzkgMTYgMTEgMTUuOTkgMTEgMTFIMTNWM1pNMTYuNSA2TDE0IDcuNUwxOC41IDEwTDIxIDguNUwxNi41IDZaIi8+Cjwvc3ZnPgo8L3N2Zz4K">
+
     <style>
         * {
             margin: 0;
@@ -13,10 +22,13 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
             overflow-x: hidden;
             background: #0a0a0a;
             color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Animated Background */
@@ -26,15 +38,623 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
-            background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e, #0f0f23);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+            z-index: -2;
+            background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e, #0f0f23, #2d1b69);
+            background-size: 500% 500%;
+            animation: gradientFlow 20s ease infinite;
         }
 
-        @keyframes gradientShift {
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 50%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Circuit Pattern Overlay */
+        .circuit-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #00d4ff 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, #ff6b35 1px, transparent 1px),
+                linear-gradient(90deg, transparent 24px, rgba(0, 212, 255, 0.1) 25px, rgba(0, 212, 255, 0.1) 26px, transparent 27px, transparent 74px, rgba(255, 107, 53, 0.1) 75px, rgba(255, 107, 53, 0.1) 76px, transparent 77px, transparent);
+            background-size: 50px 50px, 30px 30px, 100px 100px;
+            animation: circuitMove 30s linear infinite;
+        }
+
+        @keyframes circuitMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 100px); }
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+            opacity: 0.1;
+        }
+
+        .floating-element:nth-child(odd) {
+            background: radial-gradient(circle, #00d4ff, transparent);
+        }
+
+        .floating-element:nth-child(even) {
+            background: radial-gradient(circle, #ff6b35, transparent);
+        }
+
+        .floating-element:nth-child(3n) {
+            background: radial-gradient(circle, #00ff88, transparent);
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg) scale(1); 
+                opacity: 0.1;
+            }
+            25% { 
+                transform: translateY(-30px) rotate(90deg) scale(1.2); 
+                opacity: 0.3;
+            }
+            50% { 
+                transform: translateY(-50px) rotate(180deg) scale(1.5); 
+                opacity: 0.2;
+            }
+            75% { 
+                transform: translateY(-30px) rotate(270deg) scale(1.2); 
+                opacity: 0.3;
+            }
+        }
+
+        /* Main Container */
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Logo Animation */
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            display: inline-block;
+            animation: logoGlow 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes logoGlow {
+            0%, 100% { 
+                transform: scale(1);
+                filter: drop-shadow(0 0 20px #00d4ff);
+                text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            }
+            50% { 
+                transform: scale(1.1);
+                filter: drop-shadow(0 0 40px #ff6b35);
+                text-shadow: 0 0 50px rgba(255, 107, 53, 0.7);
+            }
+        }
+
+        /* Main Title */
+        .main-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #00d4ff, #ff6b35, #00ff88, #00d4ff);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textShimmer 3s ease-in-out infinite, textGlow 4s ease-in-out infinite alternate;
+            line-height: 1.1;
+        }
+
+        @keyframes textShimmer {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes textGlow {
+            from { 
+                filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.3));
+            }
+            to { 
+                filter: drop-shadow(0 0 40px rgba(255, 107, 53, 0.5));
+            }
+        }
+
+        /* Subtitle */
+        .subtitle {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+
+        .development-text {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 40px;
+            color: #00d4ff;
+            font-weight: 600;
+            animation: fadeInUp 1s ease 1s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin: 50px 0;
+            animation: fadeInUp 1s ease 1.5s both;
+        }
+
+        .progress-label {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00d4ff, #00ff88, #ff6b35);
+            border-radius: 10px;
+            width: 0%;
+            animation: progressLoad 3s ease-in-out 2s forwards;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: progressShine 2s ease-in-out infinite;
+        }
+
+        @keyframes progressLoad {
+            to { width: 75%; }
+        }
+
+        @keyframes progressShine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .progress-text {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #00d4ff;
+            opacity: 0;
+            animation: fadeIn 1s ease 4s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Team Section */
+        .team-section {
+            margin: 60px 0;
+            animation: fadeInUp 1s ease 2s both;
+        }
+
+        .team-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #00d4ff, #ff6b35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .team-description {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .team-skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .skill-badge {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid #00d4ff;
+            color: #00d4ff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-badge:hover {
+            background: rgba(0, 212, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .skill-badge:nth-child(even) {
+            border-color: #ff6b35;
+            color: #ff6b35;
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        .skill-badge:nth-child(even):hover {
+            background: rgba(255, 107, 53, 0.2);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            animation: fadeInUp 1s ease 2.5s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0, 212, 255, 0.05), rgba(255, 107, 53, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-section:hover::before {
+            opacity: 1;
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #00d4ff;
+            font-weight: 600;
+        }
+
+        .contact-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.2);
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+            animation: iconBounce 2s infinite;
+        }
+
+        @keyframes iconBounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .contact-label {
+            font-size: 1.1rem;
+            color: #00d4ff;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .contact-value {
+            font-size: 1.3rem;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        /* Loading Animation */
+        .loading-dots {
+            display: inline-flex;
+            gap: 5px;
+            margin-left: 10px;
+        }
+
+        .loading-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #00d4ff;
+            animation: loadingDots 1.5s infinite;
+        }
+
+        .loading-dot:nth-child(1) { animation-delay: 0s; }
+        .loading-dot:nth-child(2) { animation-delay: 0.3s; }
+        .loading-dot:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes loadingDots {
+            0%, 60%, 100% { transform: scale(1); opacity: 0.5; }
+            30% { transform: scale(1.5); opacity: 1; }
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(0, 212, 255, 0.9);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            box-shadow: 0 5px 25px rgba(0, 212, 255, 0.3);
+            transform: translateX(400px);
+            transition: transform 0.5s ease;
+            z-index: 1000;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 15px;
+            }
+
+            .main-title {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .development-text {
+                font-size: 1.1rem;
+            }
+
+            .team-skills {
+                gap: 10px;
+            }
+
+            .skill-badge {
+                font-size: 0.85rem;
+                padding: 8px 16px;
+            }
+
+            .contact-section {
+                padding: 30px 20px;
+                margin: 40px 10px;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .team-title {
+                font-size: 2rem;
+            }
+
+            .contact-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 3rem;
+            }
+
+            .main-title {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .development-text {
+                font-size: 1rem;
+            }
+
+            .contact-section {
+                margin: 30px 5px;
+                padding: 25px 15px;
+            }
+        }
+
+        /* Additional Animations */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .rotate {
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    <div class="circuit-pattern"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements" id="floatingElements"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">⚡🔧</div>
+
+        <!-- Main Title -->
+        <h1 class="main-title">Bientôt Disponible</h1>
+
+        <!-- Subtitle -->
+        <p class="subtitle">Notre nouveau site arrive très bientôt</p>
+        
+        <!-- Development Text -->
+        <p class="development-text">
+            En cours de développement par l'équipe technique
+            <span class="loading-dots">
+                <span class="loading-dot"></span>
+                <span class="loading-dot"></span>
+                <span class="loading-dot"></span>
+            </span>
+        </p>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-label">Progression du développement</div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-text">75% Terminé</div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="team-section">
+            <h2 class="team-title">L'Équipe Technique</h2>
+            <p class="team-description">
+                Notre équipe de développeurs et techniciens spécialisés travaille activement 
+                pour vous offrir une expérience web exceptionnelle avec les dernières technologies.
+            </p>
+            
+            <div class="team-skills">
+                <span class="skill-badge">Développement Web</span>
+                <span class="skill-badge">Design UI/UX</span>
+                <span class="skill-badge">Électronique Industrielle</span>
+                <span class="skill-badge">Automatisation</span>
+                <span class="skill-badge">Maintenance</span>
+                <span class="skill-badge">Support 24/7</span>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h3 class="contact-title">Restez en Contact</h3>
+            <p class="contact-subtitle">
+                Besoin d'informations ou envie d'être notifié du lancement ? 
+                Contactez notre équipe technique !
+            </p>
+            
+            <div class="contact-info">
+                <div class="contact-item" onclick="sendEmail()">
+                    <span class="contact-icon">📧</span>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">expert.maintenancepro@gmail.com</div>
+                </div>
+                
+                <div class="contact-item" onclick="makeCall()">
+                    <span class="contact-icon">📞</span>
+                    <div class="contact-label">Téléphone</div>
+                    <div class="contact-value">+213 562 21 36 53</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: rgba(0, 255, 136, 0.1); border-radius: 15px; border: 1px solid rgba(0, 255, 136, 0.2);">
+                <p style="color: #00ff88; font-weight: 600; margin: 0;">
+                    🚀 <strong>Lancement prévu :</strong> Très bientôt !<br>
+                    💡 <strong>Nouveautés :</strong> Interface moderne, fonctionnalités avancées<br>
+                    🔔 <strong>Notifications :</strong> Contactez-nous pour être alerté
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        Merci de votre intérêt ! 🚀
+    </div>
+
+    <scr            50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
